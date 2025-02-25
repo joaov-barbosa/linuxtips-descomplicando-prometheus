@@ -1,4 +1,4 @@
-DESCOMPLICANDO Prometheus
+DESCOMPLICANDO PROMETHEUS
 
 gauge: Medidor
 O tipo de dado gauge é o tipo de dado utilizado para criar métricas que podem ter seus valores alterados para cima ou para baixo, por exemplo, a ultilização de memória ou cpu. Se quiser trazer para exemplos da vida real, podemos falar que aquelas filas que você odeia é o tipo de dado gauge, ou então a temperatura da sua cidade, ela pode ser alterada para cima ou para baixo, ou seja, é um medidor, é um gauge! :D Um exemplo de métrica do tipo gauge é a métrica memory_usage, que é uma métrica que mostra a utilização de memória.
