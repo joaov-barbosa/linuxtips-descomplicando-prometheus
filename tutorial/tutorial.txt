@@ -1,0 +1,36 @@
+Como configurar o prometheus no LINUX
+
+1- Primeiro baixe o compactado de instalação do Protmehus
+wget https://github.com/prometheus/prometheus/releases/latest/download/prometheus-linux-amd64.tar.gz
+
+2- Descompatar o arquivo
+tar -xvzf prometheus-linux-amd64.tar.gz
+
+3- Entre na pasta descompactada e mova o binário do Protmehus/promtoll
+sudo mv prometheus /usr/local/bin
+sudo mv promtool /usr/local/bin
+
+4- Mova o arquivo de  configuração do Prometheus diretórios console/console_libraries
+Sudo mv prometheus.ym /etc/prometheus
+sudo mv console    /etc/prometheus
+sudo mv console_libraries    /etc/prometheus
+
+5- Data onde o prometheus vai guardar os dados
+mkdir /var/lib/prometheus
+
+6- Configurar usuário Prometheus
+sudo addgroup --system prometheus
+sudo adduser --shell /bin/nologin --system --group prometheus # --shell /bin/nologin para não conseguir logar
+
+7- Configurar o serviço do Prometheus(Exemplo dentro da pasta de configuração)
+sudo vim /etc/systemd/system/prometheus.service
+sudo systemctl daemon-reload
+
+8- Trocar proprietario dos diretórios
+
+sudo chown -R prometheus:prometheus /etc/prometheus
+sudo chown -R prometheus:prometheus /var/lib/prometheus
+sudo chown -R prometheus:prometheus /etc/local/bin/prometheus
+sudo chown -R prometheus:prometheus /etc/local/bin/promtool
+
+
